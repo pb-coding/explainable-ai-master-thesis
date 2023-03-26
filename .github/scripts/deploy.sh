@@ -7,17 +7,19 @@ DOCKER_USERNAME="pb-coding"
 DOCKER_IMAGE_NAME="explainable-ai-master-thesis"
 CONTAINER_NAME="xai-app"
 TARGET_DIRECTORY="/var/www/vite-react-app"
+DOCKER_NETWORK="swag_net"
+FIXED_IP="172.18.0.20"
 
 # Authenticate with Docker registry
 echo "Authenticating with Docker registry..."
-echo $GITHUB_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin $DOCKER_REGISTRY
+docker login -u $DOCKER_USERNAME --password $GITHUB_TOKEN $DOCKER_REGISTRY
 
 # Pull the latest Docker image
 echo "Pulling the latest Docker image..."
 docker pull $DOCKER_REGISTRY/$DOCKER_USERNAME/$DOCKER_IMAGE_NAME:latest
 
 # Stop and remove the existing container if it exists
-if [ "$(docker ps -q -f name=$CONTAINER_NAME)" ]; then
+if [ "$(docker ps -aq -f name=$CONTAINER_NAME)" ]; then
     echo "Stopping and removing the existing container..."
     docker stop $CONTAINER_NAME
     docker rm $CONTAINER_NAME
@@ -27,8 +29,9 @@ fi
 echo "Starting a new container from the latest image..."
 docker run -d \
   --name $CONTAINER_NAME \
+  --network $DOCKER_NETWORK \
+  --ip $FIXED_IP \
   -v $TARGET_DIRECTORY:/app \
-  -p 80:80 \
   $DOCKER_REGISTRY/$DOCKER_USERNAME/$DOCKER_IMAGE_NAME:latest
 
 echo "Deployment complete."
