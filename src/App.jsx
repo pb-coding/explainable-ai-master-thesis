@@ -6,13 +6,12 @@ import Experiment from './pages/Experiment';
 
 function App() {
 
-  const [code, setCode] = useState("");
-  const [group, setGroup] = useState("X");
+  const [group, setGroup] = useState(null);
   
   return (
     <Routes>
-      <Route path="/" element={<Experiment code={code} group={group} />} />
-      <Route path="/register" element={<Register setCode={setCode} setGroup={setGroup} />} />
+      <Route path="/" element={<Experiment group={group} />} />
+      <Route path="/register" element={<Register setGroup={setGroup} />} />
     </Routes>
   )
 }

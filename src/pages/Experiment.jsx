@@ -6,8 +6,9 @@ import Case from '../components/Case';
 import Result from '../components/Result';
 import TextualInputExplanation from '../components/TextualInputExplanation';
 import VisualInputExplanation from '../components/VisualInputExplanation';
+import EndRedirection from '../components/EndRedirection';
 
-const Experiment = ({ code, group }) => {
+const Experiment = ({ group }) => {
 
     const [stage, setStage] = useState(0);
 
@@ -15,13 +16,15 @@ const Experiment = ({ code, group }) => {
 
     const navigate = useNavigate()
 
+    const limesurveyUrl = "https://masterarbeit.philippbeckmann.de/index.php/151988"
+
     useEffect(() => {
-        if (!code) {
+        if (!group) {
             navigate("/register")
             return
         }
         
-    }, [code])
+    }, [group])
     
     return (
         <div>
@@ -36,7 +39,7 @@ const Experiment = ({ code, group }) => {
                 </>
             )}
             
-            {stage == 4 && (<EndRedirection />)}
+            {stage == 4 && (<EndRedirection limesurveyUrl={limesurveyUrl} />)}
 
         </div>
     );
