@@ -1,5 +1,5 @@
 # Dockerfile
-FROM node:16 as build
+FROM node:18
 LABEL org.opencontainers.image.source https://github.com/pb-coding/explainable-ai-master-thesis
 
 WORKDIR /app
@@ -15,14 +15,6 @@ RUN npm run build
 
 # Remove development dependencies
 RUN npm prune --production
-
-# Serve the app using a lightweight HTTP server
-FROM node:16
-
-WORKDIR /app
-
-COPY --from=build /app/dist /app/dist
-COPY --from=build /app/node_modules /app/node_modules
 
 EXPOSE 8080
 
