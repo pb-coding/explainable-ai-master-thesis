@@ -4,18 +4,11 @@ LABEL org.opencontainers.image.source https://github.com/pb-coding/explainable-a
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm ci
+COPY package.json .
+RUN npm i
 
-# Increase the open files limit for build process
-RUN ulimit -n 2048
-
-COPY . ./
-RUN npm run build
-
-# Remove development dependencies
-RUN npm prune --production
+COPY . .
 
 EXPOSE 8080
 
-CMD ["npx", "serve", "-s", "dist", "-l", "8080"]
+CMD ["npm", "run", "dev"]
