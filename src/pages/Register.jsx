@@ -96,14 +96,14 @@ const Register = ({setCode, setGroup}) => {
                         <div className="mb-2 block">
                         <Label
                             htmlFor="vp_code"
-                            value="Bitte hier den Versuchspersonencode eingeben:"
+                            value="Please enter your personal code here:"
                         />
                         </div>
                         <TextInput
                             id="vp_code"
                             ref={codeInputRef}
                             type="code"
-                            placeholder="VP-Code"
+                            placeholder="Code"
                             required={true}
                         />
                     </div>
