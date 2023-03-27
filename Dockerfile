@@ -2,9 +2,9 @@
 FROM node:18
 LABEL org.opencontainers.image.source https://github.com/pb-coding/explainable-ai-master-thesis
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package.json .
+COPY package*.json ./
 RUN npm i
 
 COPY . .
