@@ -12,6 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
       - name: Log in to Docker registry
         uses: docker/login-action@v1
         with:
@@ -25,6 +28,9 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.actor }}/explainable-ai-master-thesis:latest
+          cache-from: type=local,src=/tmp/.buildx-cache,mode=max
+          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
+          build-args: --memory 4g
 
       - name: Deploy to target server
         env:
