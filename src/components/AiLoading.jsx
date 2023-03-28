@@ -29,22 +29,22 @@ const AiLoading = ({nextStage}) => {
                         (<div className="absolute top-0 left-0 rounded-full h-32 w-32 border-b-4 border-t-4 border-gradient-slice"></div>)
                     }
                     <div className="absolute top-0 left-0 flex items-center justify-center h-32 w-32">
-                        <span className="text-xl font-extrabold text-white">AI</span>
+                        <span className="text-xl font-extrabold text-white">KI</span>
                     </div>
                 </div>
                 {isLoading ? (
                     <div className="text-center">
-                        <p className="text-2xl font-semibold text-white">Calculating Results...</p>
-                        <p className="text-lg text-white opacity-80">Please wait</p>
+                        <p className="text-2xl font-semibold text-white">Analysiere...</p>
+                        <p className="text-lg text-white opacity-80">Bitte warten..</p>
                     </div>
                 ) : (
                     <>
                         <div className="text-center">
-                            <p className="text-2xl font-semibold text-white">Calculation complete!</p>
-                            <p className="text-lg text-white opacity-80">See results</p>
+                            <p className="text-2xl font-semibold text-white">Analyse abgeschlossen.</p>
+                            <p className="text-lg text-white opacity-80">Ergebnis ermittelt.</p>
                         </div>
                         <button onClick={nextStage} className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600">
-                            Next
+                            Weiter
                         </button>
                     </>
                 )}
