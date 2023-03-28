@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Case = ({nextStage}) => {
+const Case = ({nextStage, casenumber}) => {
     
     
     return (
@@ -14,17 +14,7 @@ const Case = ({nextStage}) => {
 
             <br/>
 
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-                Tim ist ein Kunde des Versicherungsunternehmens. Er ist:
-            </p>
-            <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
-                <li>35 Jahre alt</li>
-                <li>fährt seit 17 Jahren Auto</li>
-                <li>War einmal in einen Unfall verwickelt, den er nicht verschuldet hat</li>
-                <li>Fährt durchschnittlich 800 Meilen pro Monat</li>
-                <li>Überschreitet die Geschwindigkeitsbegrenzung im Durchschnitt einmal alle zwei Monate</li>
-                <li>20 % von Tims Fahrten finden nachts statt.</li>
-            </ul>
+            {casenumber.casepage}
 
             <br/>
 

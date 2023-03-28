@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Result = ({nextStage}) => {
+const Result = ({nextStage, casenumber}) => {
     
     
     return (
@@ -20,7 +20,7 @@ const Result = ({nextStage}) => {
                     
                     <div className="p-6 space-y-6">
                         <p className="text-base font-bold leading-relaxed text-gray-500 dark:text-gray-400">
-                            Auf der Grundlage dieser Informationen hat das KI-System XYZ nicht für die günstigste Versicherungsstufe qualifiziert.
+                            {casenumber.result}
                         </p>
                         <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                             Eine Erklärung des Entscheidungsalgorithmus ist auf der folgenden Seite zu finden.

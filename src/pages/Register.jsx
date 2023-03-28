@@ -44,7 +44,6 @@ const Register = ({setGroup}) => {
     const checkAndSaveGroup = () => {
 
         const group = queryParams.get("g");
-        console.log(group)
 
         if (!group || group == "") {
             showError()

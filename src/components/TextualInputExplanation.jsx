@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TextualInputExplanation = ({nextStage}) => {
+const TextualInputExplanation = ({nextStage, casenumber}) => {
     
     
     return (
@@ -19,17 +19,7 @@ const TextualInputExplanation = ({nextStage}) => {
                     </div>
                     
                     <div className="p-6 space-y-6">
-                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        Unser Prognosemodell hat Ihre persönlichen Daten und Ihr Fahrverhalten ausgewertet, um Ihre Unfallwahrscheinlichkeit vorherzusagen. Je mehr +s oder -s, desto positiver oder negativer wirkte sich der jeweilige Faktor auf Ihr prognostiziertes Unfallrisiko aus. Unwichtige Faktoren sind gekennzeichnet.
-                        </p>
-                        <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
-                            <li>Fahrerfahrung (++)</li>
-                            <li>Anzahl vergangener Verkehrsunfälle (+)</li>
-                            <li>Gefahrene Kilometer pro Jahr (+)</li>
-                            <li>Anzahl an Nachtfahrten (+++) </li>
-                            <li>Grad der Einhaltung von Geschwindigkeitsbegrenzungen (--)</li>
-                            <li>Alter (++)</li>
-                        </ul>
+                        {casenumber.explanation.textualInput}
                     </div>
                     
                     <div className="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
