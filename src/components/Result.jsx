@@ -23,7 +23,7 @@ const Result = ({nextStage, casenumber}) => {
                             {casenumber.result}
                         </p>
                         <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                            Eine Erklärung des Entscheidungsalgorithmus ist auf der folgenden Seite zu finden.
+                            Eine Erklärung dieser Empfehlung ist auf der folgenden Seite zu finden.
                         </p>
                         
                     </div>

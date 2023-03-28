@@ -37,12 +37,12 @@ const Experiment = ({ group }) => {
                     </ul>
                 </>
             ), 
-            result: "Auf der Grundlage dieser Informationen hat das KI-System Tim für die mittlere Versicherungsstufe qualifiziert.",
+            result: `Auf der Grundlage dieser Informationen wird empfohlen Michael in die mittlere Preisklasse einzustufen.`,
             explanation: {
                 textualInput: (
                     <>
                         <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400">
-                            Unser Prognosemodell hat die persönlichen Daten und das Fahrverhalten ausgewertet, um die Unfallwahrscheinlichkeit vorherzusagen.
+                            Es wurden die persönlichen Daten und das Fahrverhalten ausgewertet, um die Unfallwahrscheinlichkeit vorherzusagen.
                             Die Faktoren haben sich unterschiedlich "günstig" sowie "ungünstig" auf das prognostizierte Unfallrisiko ausgewirkt.
                             Auf die Einstufung hat sich der Faktor:
                         </p>
@@ -52,10 +52,10 @@ const Experiment = ({ group }) => {
                             <li>die Anzahl vergangener Verkehrsunfälle: sehr ungünstig</li>
                             <li>die Gefahrenen Kilometer pro Jahr: ungünstig</li>
                             <li>die Anzahl an Nachtfahrten: neutral </li>
-                            <li>Grad der Einhaltung von Geschwindigkeitsbegrenzungen: ungünstig</li>
+                            <li>der Grad der Einhaltung von Geschwindigkeitsbegrenzungen: ungünstig</li>
                         </ul>
                         <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400">
-                            am meisten ausgewirkt.
+                            ausgewirkt.
                         </p>
                     </>
                 ),
