@@ -9,6 +9,8 @@ import VisualInputExplanation from '../components/VisualInputExplanation';
 import EndRedirection from '../components/EndRedirection';
 import TextualSensitivityExplanation from '../components/TextualSensitivityExplanation';
 import VisualSensitivityExplanation from '../components/VisualSensitivityExplanation';
+import HybridSensitvityExplanation from '../components/HybridSensitivityExplanation';
+import HybridInputExplanation from '../components/HybridInputExplanation';
 import getCaseData from '../utils/caseData';
 
 const Experiment = ({ group }) => {
@@ -41,8 +43,10 @@ const Experiment = ({ group }) => {
                 <>
                     {group == groups.INPUT_TEXTUAL && (<TextualInputExplanation nextStage={nextStage} casenumber={cases[1]} />)}
                     {group == groups.INPUT_VISUAL && (<VisualInputExplanation nextStage={nextStage} casenumber={cases[1]} />)}
+                    {group == groups.INPUT_HYBRID && (<HybridInputExplanation nextStage={nextStage} casenumber={cases[1]} />)}
                     {group == groups.SENSITIVITY_TEXTUAL && (<TextualSensitivityExplanation nextStage={nextStage} casenumber={cases[1]} />)}
                     {group == groups.SENSITIVITY_VISUAL && (<VisualSensitivityExplanation nextStage={nextStage} casenumber={cases[1]} />)}
+                    {group == groups.SENSITIVITY_HYBRID && (<HybridSensitvityExplanation nextStage={nextStage} casenumber={cases[1]} />)}
                 </>
             )}
             

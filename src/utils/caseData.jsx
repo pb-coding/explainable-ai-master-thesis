@@ -48,19 +48,19 @@ const kmPerYearData = [
 ]
 
 const nightDrivingData = [
-    {x: '0', y: 100}, 
-    {x: '1', y: 80}, 
-    {x: '2', y: 30}, 
-    {x: '3', y: 20}, 
-    {x: '> 4', y: 10}
+    {x: '< 5%', y: 17}, 
+    {x: '5 - 14', y: 27}, 
+    {x: '15 - 24', y: 26},
+    {x: '25 - 34', y: 16}, 
+    {x: '35 - 50', y: 8}, 
+    {x: '> 50%', y: 6}
 ]
 
 const speedLimitData = [
-    {x: '%', y: 100}, 
-    {x: '1', y: 80}, 
-    {x: '2', y: 30}, 
-    {x: '3', y: 20}, 
-    {x: '> 4', y: 10}
+    {x: '<= 1', y: 42}, 
+    {x: '2 - 3', y: 28}, 
+    {x: '4 - 5', y: 12},
+    {x: '> 5', y: 8}, 
 ]
 
 
@@ -78,8 +78,8 @@ const caseData = {
                     <li>hat seit 27 Jahren seinen Führerschein</li>
                     <li>ist seit 1 Jahr unfallfrei (SF1)</li>
                     <li>fährt ca. 28.000 KM im Jahr</li>
-                    <li>5% der Fahrten finden nachts statt.</li>
-                    <li>überschreitet die Geschwindigkeitsbegrenzung im Durchschnitt 3 mal im Monat mehr als 10%</li>
+                    <li>26% der Fahrten finden nachts statt.</li>
+                    <li>überschreitet die Geschwindigkeitsbegrenzung im Durchschnitt 4 mal alle 6 Monate mehr als 10%</li>
                 </ul>
             </>
         ), 
@@ -89,15 +89,15 @@ const caseData = {
                 <>
                     <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400">
                         Es wurden die persönlichen Daten und das Fahrverhalten ausgewertet, um die Unfallwahrscheinlichkeit vorherzusagen.
-                        Die Faktoren haben sich unterschiedlich "günstig" sowie "ungünstig" auf das prognostizierte Unfallrisiko ausgewirkt.
-                        Auf die Einstufung hat sich der Faktor:
-                    </p>
+                        <br/>Die Faktoren haben sich unterschiedlich "günstig" sowie "ungünstig" auf das prognostizierte Unfallrisiko ausgewirkt.
+                        <br/>Auf die Einstufung hat sich der Faktor:
+                    </p><br/>
                     <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
                         <li>Alter: günstig,</li>
                         <li>die Fahrerfahrung in Jahren: sehr günstig,</li>
                         <li>Schadenfreiheitsklasse: sehr ungünstig</li>
                         <li>die Gefahrenen Kilometer pro Jahr: ungünstig</li>
-                        <li>der Anteil an Nachtfahrten: neutral </li>
+                        <li>der Anteil an Nachtfahrten: ungünstig </li>
                         <li>der Grad der Einhaltung von Geschwindigkeitsbegrenzungen: ungünstig</li>
                     </ul>
                     <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400">
@@ -200,13 +200,13 @@ const caseData = {
                 },
                 {
                     name: "Anteil an Nachtfahrten",
-                    badgeType: badgeType.yellow,
-                    badgeText: "|",
+                    badgeType: badgeType.red,
+                    badgeText: "-",
                     body: "",
                     data: nightDrivingData,
                     labels: {
                         x: {
-                            value: 'Alter',
+                            value: 'Anteil der Fahrten nachts in %',
                             position: 'insideBottom'
                         },
                         y: {
@@ -216,20 +216,20 @@ const caseData = {
                         }
                     },
                     referenceLine: {
-                        x: '40 - 59',
-                        label: '45 J.',
+                        x: '25 - 34',
+                        label: '26% Nachtfahrten',
                         position: 'left',
                     }
                 },
                 {
-                    name: "Grad der Einhaltung von Geschwindigkeitsbegrenzungen",
+                    name: "Einhaltung von Geschwindigkeitsbegrenzungen",
                     badgeType: badgeType.red,
                     badgeText: "-",
                     body: "",
                     data: speedLimitData,
                     labels: {
                         x: {
-                            value: 'Alter',
+                            value: 'Anzahl in 6 Monaten',
                             position: 'insideBottom'
                         },
                         y: {
@@ -239,8 +239,8 @@ const caseData = {
                         }
                     },
                     referenceLine: {
-                        x: '40 - 59',
-                        label: '45 J.',
+                        x: '4 - 5',
+                        label: '4x überschritten',
                         position: 'left',
                     }
                 },
@@ -248,17 +248,13 @@ const caseData = {
             textualSensitivity: (
                 <>
                     <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400">
-                        Fall: Michael<br />
-                        Einstufung: mittlere Preisklasse
-                    </p>
-                    
-                    <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400">
                         Einer dieser Voraussetungen hätte erfüllt sein müssen, um sich für die Preisklasse <span class="text-green-700 font-bold">"niedrig"</span> zu qualifizieren:
                     </p>
                     <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
                         <li>Wenn die Schadenfreiheit 6 oder mehr Jahre betragen hätte</li>
-                        <li>Wenn die gefahrenen KM im Jahr weniger als 20.000 km betragen hätte </li>
-                        <li>Wenn die Geschwindigkeitsbegrenzung nur einmal pro Monat oder seltener, mehr als 10% überschritten worden wäre</li>
+                        <li>Wenn die gefahrenen KM im Jahr weniger als 16.000 km betragen hätte </li>
+                        <li>Wenn der Anteil an Nachtfahrten weniger als 20% betragen hätte</li>
+                        <li>Wenn die Überschreitung von mehr als 10% einer Geschwindigkeitsbegrenzung, weniger als 3 mal alle 6 Monate vorgekommen wäre</li>
                     </ul>
                 </>
             ),
@@ -316,11 +312,11 @@ const caseData = {
                     },
                 },
                 {
-                    name: "Grad der Einhaltung von Geschwindigkeitsbegrenzungen",
-                    data: speedLimitData,
+                    name: "Anteil an Nachtfahrten",
+                    data: nightDrivingData,
                     labels: {
                         x: {
-                            value: 'Alter',
+                            value: 'Anteil der Fahrten nachts in %',
                             position: 'insideBottom'
                         },
                         y: {
@@ -330,10 +326,42 @@ const caseData = {
                         }
                     },
                     referenceLine: {
-                        x: '40 - 59',
-                        label: '45 J.',
+                        x: '25 - 34',
+                        label: '26% Nachtfahrten',
+                        position: 'right',
+                    },
+                    referenceArea: {
+                        x2: '< 5%',
+                        x1: '15 - 24',
+                        label: 'niedrigere Preisklasse',
                         position: 'left',
-                    }
+                    },
+                },
+                {
+                    name: "Einhaltung von Geschwindigkeitsbegrenzungen",
+                    data: speedLimitData,
+                    labels: {
+                        x: {
+                            value: 'Anzahl in 6 Monaten',
+                            position: 'insideBottom'
+                        },
+                        y: {
+                            value: caseYScale.labelText,
+                            position: 'insideLeft',
+                            dy: caseYScale.dy,
+                        }
+                    },
+                    referenceLine: {
+                        x: '4 - 5',
+                        label: '4x überschritten',
+                        position: 'left',
+                    },
+                    referenceArea: {
+                        x2: '<= 1',
+                        x1: '2 - 3',
+                        label: 'niedrigere Preisklasse',
+                        position: 'left',
+                    },
                 },
             ],
         },

@@ -11,13 +11,11 @@ import {
     Label, 
     ReferenceLine, 
     ReferenceArea,
-    Rectangle
 } from 'recharts';
 
-const VisualSensitvityExplanation = ({nextStage, casenumber}) => {  
+const VisualSensitvityExplanation = ({nextStage, casenumber, hybridText}) => {  
     
     const [selectedParameter, setSelectedParameter] = useState(casenumber.explanation.visualSensitivity[0])
-    const windowSize = useRef([window.innerWidth, window.innerHeight]);
     
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-4 bg-slate-300">
@@ -27,8 +25,11 @@ const VisualSensitvityExplanation = ({nextStage, casenumber}) => {
             <div className="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             
                 <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    KI Erklärung - Sensitivity based
+                    KI Erklärung - Typ "Sensitivity based / visual"
                 </h5>
+                <br />
+
+                {hybridText}
 
                 <br />
 

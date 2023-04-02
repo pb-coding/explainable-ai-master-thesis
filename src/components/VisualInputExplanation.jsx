@@ -1,12 +1,20 @@
 import React, { useState, useRef } from 'react';
 import ParameterCard from './ParameterCard'
 import VisualExplanationsHeader from './VisualExplanationsHeader'
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Label, ReferenceLine } from 'recharts';
+import { 
+    LineChart, 
+    Line, 
+    CartesianGrid, 
+    XAxis, 
+    YAxis, 
+    ResponsiveContainer, 
+    Label, 
+    ReferenceLine 
+} from 'recharts';
 
-const VisualExplanation = ({nextStage, casenumber}) => {  
+const VisualExplanation = ({nextStage, casenumber, hybridText}) => {  
     
     const [selectedParameter, setSelectedParameter] = useState(casenumber.explanation.visualInput[0])
-    const windowSize = useRef([window.innerWidth, window.innerHeight]);
     
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-4 bg-slate-300">
@@ -16,8 +24,12 @@ const VisualExplanation = ({nextStage, casenumber}) => {
             <div className="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 
             <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                KI Erklärung - Input-influence based
+                KI Erklärung - Typ "Input-influence based / visual "
             </h5>
+
+            <br />
+
+            {hybridText}
 
             <br />
 
