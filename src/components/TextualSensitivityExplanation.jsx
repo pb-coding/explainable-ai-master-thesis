@@ -1,4 +1,5 @@
 import React from 'react';
+import VisualExplanationsHeader from './VisualExplanationsHeader';
 
 const TextualSensitivityExplanation = ({nextStage, casenumber}) => {
     
@@ -6,6 +7,10 @@ const TextualSensitivityExplanation = ({nextStage, casenumber}) => {
     return (
         <div id="staticModal" data-modal-backdrop="static" tabIndex="-1" aria-hidden="false" className="fixed top-0 left-0 right-0 z-50 w-full h-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 flex items-center justify-center bg-slate-300">
             <div className="relative w-full h-full max-w-2xl md:h-auto">
+                
+                <VisualExplanationsHeader casenumber={casenumber} />
+
+                <br/>
                 
                 <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     

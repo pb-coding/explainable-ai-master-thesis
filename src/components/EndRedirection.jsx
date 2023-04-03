@@ -18,7 +18,7 @@ const EndRedirection = ({limesurveyUrl}) => {
             
 
             <p className="font-normal text-gray-700 dark:text-gray-400">
-                Nun werden dir auf Limesurvey ein paar Fragen gestellt. Bitte beantworte diese so ehrlich wie möglich.
+                Nun werden Ihnen auf Limesurvey ein paar Fragen gestellt. Bitte beantworten Sie diese so ehrlich wie möglich.
             </p>
             <br/>
 

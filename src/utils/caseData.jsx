@@ -94,15 +94,15 @@ const caseData = {
                     </p><br/>
                     <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
                         <li>das Alter: günstig,</li>
-                        <li>die Fahrerfahrung in Jahren: sehr günstig,</li>
+                        <li>die Fahrerfahrung in Jahren: günstig,</li>
                         <li>die Schadenfreiheit in Jahren: sehr ungünstig</li>
-                        <li>die gefahrenen Kilometer pro Jahr: ungünstig</li>
+                        <li>die gefahrenen Kilometer pro Jahr: sehr ungünstig</li>
                         <li>der Anteil an Nachtfahrten: ungünstig </li>
                         <li>der Grad der Einhaltung von Geschwindigkeitsbegrenzungen: ungünstig</li>
                     </ul>
                     <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400">
                         ausgewirkt.
-                    </p>
+                    </p><br/>
                 </>
             ),
             visualInput: [
@@ -132,7 +132,7 @@ const caseData = {
                 {
                     name: 'Fahrerfahrung in Jahren',
                     badgeType: badgeType.green,
-                    badgeText: "++",
+                    badgeText: "+",
                     body: "",
                     data: drivingExperienceData,
                     labels: {
@@ -178,7 +178,7 @@ const caseData = {
                 {
                     name: "Gefahrene Kilometer pro Jahr",
                     badgeType: badgeType.red,
-                    badgeText: "-",
+                    badgeText: "- -",
                     body: "",
                     data: kmPerYearData,
                     labels: {
@@ -255,7 +255,7 @@ const caseData = {
                         <li>Wenn die gefahrenen KM im Jahr weniger als 16.000 km betragen hätte </li>
                         <li>Wenn der Anteil an Nachtfahrten weniger als 20% betragen hätte</li>
                         <li>Wenn die Überschreitung von mehr als 10% einer Geschwindigkeitsbegrenzung, weniger als 3 mal alle 6 Monate vorgekommen wäre</li>
-                    </ul>
+                    </ul><br/>
                 </>
             ),
             visualSensitivity: [

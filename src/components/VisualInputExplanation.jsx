@@ -24,14 +24,22 @@ const VisualExplanation = ({nextStage, casenumber, hybridText}) => {
             <div className="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 
             <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                KI Erklärung - Typ "Input-influence based / visual "
+                KI Erklärung - Typ "Input-influence based / {hybridText ? "hybrid": "visual"}"
             </h5>
 
             <br />
 
             {hybridText}
 
-            <br />
+            <div class="flex p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+                <svg aria-hidden="false" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Info</span>
+                <div>
+                    Die folgenden Parameter haben die Beurteilung dieses Falls in dem angegebenen Ausmaß beeinflusst.<br />
+                    Diese können angeklickt werden und auf der rechten Seite kann {casenumber.firstName}'s Fall mit anderen Versicherungsnehmern verglichen werden.<br/>
+                    Die rote Linie zeigt den Wert des Parameters für {casenumber.firstName} an.
+                </div>
+            </div>
 
             <h5 className="mt-2 mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Parameter
