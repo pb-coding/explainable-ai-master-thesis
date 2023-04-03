@@ -71,7 +71,7 @@ const Register = ({setGroup}) => {
                             <div className="mb-2 block">
                                 <Label
                                     htmlFor="vp_code"
-                                    value="Wenn du bereit bist, klicke auf Start."
+                                    value="Wenn Sie bereit sind, klicken Sie auf Start."
                                 />
                             </div>
                             {errorMessage && (

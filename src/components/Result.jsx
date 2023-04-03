@@ -19,8 +19,11 @@ const Result = ({nextStage, casenumber}) => {
                     </div>
                     
                     <div className="p-6 space-y-6">
+                        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                            Ziel: Einstufung in die Preisklasse: niedrig, mittel oder hoch
+                        </p>
                         <p className="text-base font-bold leading-relaxed text-gray-500 dark:text-gray-400">
-                        Auf der Grundlage dieser Informationen wird empfohlen Michael in die Preisklasse {casenumber.result} einzustufen.
+                        Auf der Grundlage dieser Informationen wird empfohlen, {casenumber.firstName} in die Preisklasse {casenumber.result} einzustufen.
                         </p>
                         <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                             Eine Erklärung dieser Empfehlung ist auf der folgenden Seite zu finden.

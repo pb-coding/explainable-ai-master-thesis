@@ -76,9 +76,9 @@ const caseData = {
                 <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
                     <li>45 Jahre alt</li>
                     <li>hat seit 27 Jahren seinen Führerschein</li>
-                    <li>ist seit 1 Jahr unfallfrei (SF1)</li>
+                    <li>ist seit 1 Jahr unfallfrei</li>
                     <li>fährt ca. 28.000 KM im Jahr</li>
-                    <li>26% der Fahrten finden nachts statt.</li>
+                    <li>26 % der Fahrten finden nachts statt</li>
                     <li>überschreitet die Geschwindigkeitsbegrenzung im Durchschnitt 4 mal alle 6 Monate mehr als 10%</li>
                 </ul>
             </>
@@ -93,10 +93,10 @@ const caseData = {
                         <br/>Auf die Einstufung hat sich der Faktor:
                     </p><br/>
                     <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
-                        <li>Alter: günstig,</li>
+                        <li>das Alter: günstig,</li>
                         <li>die Fahrerfahrung in Jahren: sehr günstig,</li>
-                        <li>Schadenfreiheitsklasse: sehr ungünstig</li>
-                        <li>die Gefahrenen Kilometer pro Jahr: ungünstig</li>
+                        <li>die Schadenfreiheit in Jahren: sehr ungünstig</li>
+                        <li>die gefahrenen Kilometer pro Jahr: ungünstig</li>
                         <li>der Anteil an Nachtfahrten: ungünstig </li>
                         <li>der Grad der Einhaltung von Geschwindigkeitsbegrenzungen: ungünstig</li>
                     </ul>
