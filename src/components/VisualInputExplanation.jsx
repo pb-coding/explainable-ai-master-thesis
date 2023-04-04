@@ -3,7 +3,8 @@ import ParameterCard from './ParameterCard'
 import VisualExplanationsHeader from './VisualExplanationsHeader'
 import { 
     LineChart, 
-    Line, 
+    Line,
+    Legend, 
     CartesianGrid, 
     XAxis, 
     YAxis, 
@@ -11,10 +12,12 @@ import {
     Label, 
     ReferenceLine 
 } from 'recharts';
+import { handleParameterClick } from '../utils/utils';
 
 const VisualExplanation = ({nextStage, casenumber, hybridText}) => {  
     
     const [selectedParameter, setSelectedParameter] = useState(casenumber.explanation.visualInput[0])
+    const chartRef = useRef(null);
     
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-4 bg-slate-300">
@@ -36,7 +39,7 @@ const VisualExplanation = ({nextStage, casenumber, hybridText}) => {
                 <span class="sr-only">Info</span>
                 <div>
                     Die folgenden Parameter haben die Beurteilung dieses Falls in dem angegebenen Ausmaß beeinflusst.<br />
-                    Diese können angeklickt werden und auf der rechten Seite kann {casenumber.firstName}'s Fall mit anderen Versicherungsnehmern verglichen werden.<br/>
+                    Diese können angeklickt werden und auf der rechten Seite (unten bei mobiler Nutzung) kann {casenumber.firstName}'s Fall mit anderen Versicherungsnehmern verglichen werden.<br/>
                     Die rote Linie zeigt den Wert des Parameters für {casenumber.firstName} an.
                 </div>
             </div>
@@ -53,7 +56,7 @@ const VisualExplanation = ({nextStage, casenumber, hybridText}) => {
                     return (
                         <ParameterCard 
                             link="#"
-                            onClick={() => setSelectedParameter(param)}
+                            onClick={() => handleParameterClick(param, setSelectedParameter, chartRef)}
                             active={selectedParameter.name === param.name}
                             heading={param.name}
                             badgeType={param.badgeType} 
@@ -71,19 +74,22 @@ const VisualExplanation = ({nextStage, casenumber, hybridText}) => {
                 <div className="lg:col-span-7 mb-4 md:mb-0">
 
                     <h5 className="my-2 text-center text-lg font-bold tracking-tight text-gray-900 dark:text-white">
-                        Vergleich zu anderen Versicherungsnehmern
+                        {selectedParameter.name} im Vergleich zu anderen Versicherten
                     </h5>
 
-                    <div id="chart">
+                    <div id="chart" ref={chartRef}>
                         
                         <ResponsiveContainer width={"100%"} height={300}>
-                            <LineChart data={selectedParameter.data} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                            <LineChart 
+                                data={selectedParameter.data} 
+                                margin={{ top: 0, right: 0, bottom: 20, left: 0 }}
+                            >
                                 <Line type="monotone" dataKey="y" stroke="#8884d8" />
                                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                                 <XAxis dataKey="x">
                                     <Label 
                                         value={selectedParameter.labels.x.value} 
-                                        offset={0} 
+                                        offset={-10} 
                                         position={selectedParameter.labels.x.position} 
                                     />
                                 </XAxis>
@@ -105,6 +111,23 @@ const VisualExplanation = ({nextStage, casenumber, hybridText}) => {
                                             position: `${selectedParameter.referenceLine.position}` 
                                         }
                                     } 
+                                />
+                                <Legend 
+                                        payload={[
+                                            {
+                                            type: "line",
+                                            value: `${casenumber.firstName}`,
+                                            color: "red",
+                                            },
+                                            {
+                                            type: "square",
+                                            value: "niedrigere Preisklasse",
+                                            color: "green",
+                                            },
+                                        ]}
+                                        verticalAlign="top"
+                                        height={60}
+                                        
                                     />
                             </LineChart>
                         </ResponsiveContainer>

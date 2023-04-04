@@ -98,7 +98,7 @@ const caseData = {
                         <li>die Schadenfreiheit in Jahren: sehr ungünstig</li>
                         <li>die gefahrenen Kilometer pro Jahr: sehr ungünstig</li>
                         <li>der Anteil an Nachtfahrten: ungünstig </li>
-                        <li>der Grad der Einhaltung von Geschwindigkeitsbegrenzungen: ungünstig</li>
+                        <li>die Anzahl Geschwindigkeitsüberschreitungen: ungünstig</li>
                     </ul>
                     <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400">
                         ausgewirkt.
@@ -148,7 +148,7 @@ const caseData = {
                     },
                     referenceLine: {
                         x: '21 - 30',
-                        label: '27 J.',
+                        label: '27 Jahre',
                         position: 'left'
                     },
                 },
@@ -171,7 +171,7 @@ const caseData = {
                     },
                     referenceLine: {
                         x: '<= 1',
-                        label: '1 J. unfallfrei',
+                        label: '1 Jahr',
                         position: 'right'
                     },
                 },
@@ -194,7 +194,7 @@ const caseData = {
                     },
                     referenceLine: {
                         x: '>= 20',
-                        label: '28 km/J.',
+                        label: '28k',
                         position: 'left',
                     }
                 },
@@ -217,12 +217,12 @@ const caseData = {
                     },
                     referenceLine: {
                         x: '25 - 34',
-                        label: '26% Nachtfahrten',
+                        label: '26%',
                         position: 'left',
                     }
                 },
                 {
-                    name: "Einhaltung von Geschwindigkeitsbegrenzungen",
+                    name: "Geschwindigkeitsüberschreitungen",
                     badgeType: badgeType.red,
                     badgeText: "-",
                     body: "",
@@ -240,7 +240,7 @@ const caseData = {
                     },
                     referenceLine: {
                         x: '4 - 5',
-                        label: '4x überschritten',
+                        label: '4x',
                         position: 'left',
                     }
                 },
@@ -253,8 +253,8 @@ const caseData = {
                     <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
                         <li>Wenn die Schadenfreiheit 6 oder mehr Jahre betragen hätte</li>
                         <li>Wenn die gefahrenen KM im Jahr weniger als 16.000 km betragen hätte </li>
-                        <li>Wenn der Anteil an Nachtfahrten weniger als 20% betragen hätte</li>
-                        <li>Wenn die Überschreitung von mehr als 10% einer Geschwindigkeitsbegrenzung, weniger als 3 mal alle 6 Monate vorgekommen wäre</li>
+                        <li>Wenn der Anteil an Nachtfahrten weniger als 20 % betragen hätte</li>
+                        <li>Wenn die Überschreitung von mehr als 10 % einer Geschwindigkeitsbegrenzung, weniger als 3 mal alle 6 Monate vorgekommen wäre</li>
                     </ul><br/>
                 </>
             ),
@@ -275,13 +275,13 @@ const caseData = {
                     },
                     referenceLine: {
                         x: '<= 1',
-                        label: '1 J. unfallfrei',
+                        label: '1 Jahr',
                         position: 'right'
                     },
                     referenceArea: {
                         x1: '6 - 10',
                         x2: '>= 26',
-                        label: 'niedrigere Preisklasse',
+                        label: '',
                         position: 'right',
                     },
                 },
@@ -301,13 +301,13 @@ const caseData = {
                     },
                     referenceLine: {
                         x: '>= 20',
-                        label: '28 km/J.',
+                        label: '28k',
                         position: 'left',
                     },
                     referenceArea: {
                         x2: '< 5',
                         x1: '15 - 19',
-                        label: 'niedrigere Preisklasse',
+                        label: '',
                         position: 'left',
                     },
                 },
@@ -316,7 +316,7 @@ const caseData = {
                     data: nightDrivingData,
                     labels: {
                         x: {
-                            value: 'Anteil der Fahrten nachts in %',
+                            value: 'Fahrten nachts in %',
                             position: 'insideBottom'
                         },
                         y: {
@@ -327,18 +327,18 @@ const caseData = {
                     },
                     referenceLine: {
                         x: '25 - 34',
-                        label: '26% Nachtfahrten',
+                        label: '26%',
                         position: 'right',
                     },
                     referenceArea: {
                         x2: '< 5%',
                         x1: '15 - 24',
-                        label: 'niedrigere Preisklasse',
+                        label: '',
                         position: 'left',
                     },
                 },
                 {
-                    name: "Einhaltung von Geschwindigkeitsbegrenzungen",
+                    name: "Geschwindigkeitsüberschreitungen",
                     data: speedLimitData,
                     labels: {
                         x: {
@@ -353,13 +353,13 @@ const caseData = {
                     },
                     referenceLine: {
                         x: '4 - 5',
-                        label: '4x überschritten',
+                        label: '4x',
                         position: 'left',
                     },
                     referenceArea: {
                         x2: '<= 1',
                         x1: '2 - 3',
-                        label: 'niedrigere Preisklasse',
+                        label: '',
                         position: 'left',
                     },
                 },

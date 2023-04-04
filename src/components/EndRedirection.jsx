@@ -20,12 +20,6 @@ const EndRedirection = ({limesurveyUrl}) => {
             <p className="font-normal text-gray-700 dark:text-gray-400">
                 Nun werden Ihnen auf Limesurvey ein paar Fragen gestellt. Bitte beantworten Sie diese so ehrlich wie möglich.
             </p>
-            <br/>
-
-            <p className="font-bold text-gray-700 dark:text-gray-400">
-                WICHTIG! Das Passwort für Limesurvey lautet: <span className="font-bold text-green-600">6677</span>
-            </p>
-            
 
             <a href={limesurveyUrl}>
                 <button className="px-4 py-2 mt-4 font-semibold text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
