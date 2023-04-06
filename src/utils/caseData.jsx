@@ -76,7 +76,7 @@ const caseData = {
                 <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
                     <li>45 Jahre alt</li>
                     <li>hat seit 27 Jahren seinen Führerschein</li>
-                    <li>ist seit 1 Jahr unfallfrei</li>
+                    <li>ist seit einem Jahr unfallfrei</li>
                     <li>fährt ca. 28.000 KM im Jahr</li>
                     <li>26 % der Fahrten finden nachts statt</li>
                     <li>überschreitet die Geschwindigkeitsbegrenzung im Durchschnitt 4 mal alle 6 Monate mehr als 10%</li>

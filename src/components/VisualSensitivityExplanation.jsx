@@ -28,7 +28,7 @@ const VisualSensitvityExplanation = ({nextStage, casenumber, hybridText}) => {
             <div className="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             
                 <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    KI Erklärung - Typ "Sensitivity based / {hybridText ? "hybrid": "visual"}"
+                    KI Erklärung
                 </h5>
                 <br />
 

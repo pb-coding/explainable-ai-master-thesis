@@ -27,7 +27,7 @@ const VisualExplanation = ({nextStage, casenumber, hybridText}) => {
             <div className="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 
             <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                KI Erklärung - Typ "Input-influence based / {hybridText ? "hybrid": "visual"}"
+                KI Erklärung
             </h5>
 
             <br />
@@ -118,11 +118,6 @@ const VisualExplanation = ({nextStage, casenumber, hybridText}) => {
                                             type: "line",
                                             value: `${casenumber.firstName}`,
                                             color: "red",
-                                            },
-                                            {
-                                            type: "square",
-                                            value: "niedrigere Preisklasse",
-                                            color: "green",
                                             },
                                         ]}
                                         verticalAlign="top"
