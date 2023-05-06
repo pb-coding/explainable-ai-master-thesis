@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Citation purposes"
+authors:
+- family-names: "Beckmann"
+  given-names: "Philipp"
+  orcid:
+title: "explainable-ai-master-thesis"
+version: 1.0.0
+doi: 
+date-released: 2023-05-06
+url: "https://github.com/pb-coding/explainable-ai-master-thesis"
