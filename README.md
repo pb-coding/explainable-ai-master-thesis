@@ -1,4 +1,4 @@
-# Master thesis Explainable AI
+# Master thesis in the field of Explainable AI (XAI)
 Topic: To what extent does the form of presentation (textual, visual, hybrid) in combination with AI explanation types (input influence-based, sensitivity-based) influence end users' acceptance of AI-based decision support systems?
 
 ## Summary
@@ -21,9 +21,9 @@ Step 3: Participant sees result
 
 ![image](https://user-images.githubusercontent.com/71174645/236625349-f2a21fcc-42f2-40c1-9560-5dc001bfd813.png)
 
-Step 4: Participant receives based on the 6 experimental group he was randomly assigned to a combinations of explanation type (input influence-based | sensitivity-based) and display type (textual, visual, hybrid).
+Step 4: Participant receives based on the experimental group (6 groups) randomly assigned to a combination of explanation type (input influence-based | sensitivity-based) and display type (textual, visual, hybrid).
 
-Step 5: Participant gets redirected back to my Limesurvey instance and rates the explanation.
+Step 5: Participant gets redirected back to Limesurvey instance and rates the explanation.
 
 
 ## Explanation types
