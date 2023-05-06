@@ -1,13 +1,13 @@
 # Master thesis Explainable AI
 Topic: To what extent does the form of presentation (textual, visual, hybrid) in combination with AI explanation types (input influence-based, sensitivity-based) influence end users' acceptance of AI-based decision support systems?
 
-##Summary
+## Summary
 To address this question, I created a user-friendly React app that takes participants through a scenario where they play the role of insurance company employees. In this role, they must assess surrogate based explanations (based on LIME) of an AI system's recommendations for customers' data-driven price ratings.
 
-##Scenario
+## Scenario
 In this scenario, participants are asked to assume the role of a clerk at an insurance company that uses AI to offer personalized and competitive car insurance premiums.  The participant learns that the insurance company collects data on driving behavior through sensors installed in customers' vehicles and that this data is analyzed by AI to evaluate individual driving habits. Participants are informed that the willingness of customers to participate in this system is based on the fact that customers would receive a discount on their insurance premium as an incentive if they voluntarily participate in the data collection. The scenario outlines that participants will receive the task to review a comprehensive overview of a fictitious customer's profile, including personal details and data on his driving behavior and that this data serves as the basis for the AI's analysis and subsequent recommendation. The participant is instructed that after the AI’s recommendation an AI explanation will follow explaining the decision rationale behind the AI result and that the participant is tasked to rate this AI explanation afterwards.
 
-##Steps of the participant
+## Steps of the participant
 
 Step 1: Participants reviews a fictitious customer profile
 
@@ -26,7 +26,7 @@ Step 4: Participant receives based on the 6 experimental group he was randomly a
 Step 5: Participant gets redirected back to my Limesurvey instance and rates the explanation.
 
 
-##Explanation types
+## Explanation types
 
 Group randomization happened prior on Limesurvey. When redirected to this app, /register?g=<groupnumber 1 to 6> defines which explanation is seen.
 
