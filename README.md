@@ -45,17 +45,17 @@ Group randomization happened prior on Limesurvey. When redirected to this app, /
 ![image](https://user-images.githubusercontent.com/71174645/236625696-f0fd655c-a827-4eb2-905e-b0b7aa42d02c.png)
 
 
-/register?g=4 --> textual input influence-based explanation
+/register?g=4 --> textual sensitivity-based explanation
 
 ![image](https://user-images.githubusercontent.com/71174645/236625778-7d6c5cd3-1a0e-4321-b7a7-b5a0d5255b70.png)
 
 
-/register?g=5 --> visual input influence-based explanation
+/register?g=5 --> visual sensitivity-based explanation
 
 ![image](https://user-images.githubusercontent.com/71174645/236625847-dd66f3fa-73c2-47eb-8e12-d4f11d6df5af.png)
 
 
-/register?g=6 --> hybrid input influence-based explanation
+/register?g=6 --> hybrid sensitivity-based explanation
 
 ![image](https://user-images.githubusercontent.com/71174645/236625900-68c0c019-c233-4d9b-b184-ff5f7f7d70b7.png)
 
