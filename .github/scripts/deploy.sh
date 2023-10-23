@@ -6,9 +6,9 @@ DOCKER_REGISTRY="ghcr.io"
 DOCKER_USERNAME="pb-coding"
 DOCKER_IMAGE_NAME="explainable-ai-master-thesis"
 CONTAINER_NAME="xai-app"
-TARGET_DIRECTORY="/var/www/$CONTAINER_NAME"
+TARGET_DIRECTORY="/home/pb1497/deployments/$CONTAINER_NAME"
 DOCKER_NETWORK="swag_net"
-FIXED_IP="172.18.0.20"
+GITHUB_TOKEN=$1
 
 # Authenticate with Docker registry
 echo "Authenticating with Docker registry..."
@@ -17,6 +17,9 @@ docker login -u $DOCKER_USERNAME --password $GITHUB_TOKEN $DOCKER_REGISTRY
 # Pull the latest Docker image
 echo "Pulling the latest Docker image..."
 docker pull $DOCKER_REGISTRY/$DOCKER_USERNAME/$DOCKER_IMAGE_NAME:latest
+
+mkdir -p $TARGET_DIRECTORY
+cd $TARGET_DIRECTORY
 
 # Stop and remove the existing container if it exists
 if [ "$(docker ps -aq -f name=$CONTAINER_NAME)" ]; then
@@ -30,7 +33,6 @@ echo "Starting a new container from the latest image..."
 docker run -d \
   --name $CONTAINER_NAME \
   --network $DOCKER_NETWORK \
-  --ip $FIXED_IP \
   -v $TARGET_DIRECTORY:/app \
   $DOCKER_REGISTRY/$DOCKER_USERNAME/$DOCKER_IMAGE_NAME:latest
 
