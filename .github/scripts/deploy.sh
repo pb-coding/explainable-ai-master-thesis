@@ -8,11 +8,11 @@ DOCKER_IMAGE_NAME="explainable-ai-master-thesis"
 CONTAINER_NAME="xai-app"
 TARGET_DIRECTORY="/home/pb1497/deployments/$CONTAINER_NAME"
 DOCKER_NETWORK="swag_net"
-GITHUB_TOKEN=$1
+DOCKER_REGISTRY_TOKEN=$1
 
 # Authenticate with Docker registry
 echo "Authenticating with Docker registry..."
-docker login -u $DOCKER_USERNAME --password $GITHUB_TOKEN $DOCKER_REGISTRY
+docker login -u $DOCKER_USERNAME --password $DOCKER_REGISTRY_TOKEN $DOCKER_REGISTRY
 
 # Pull the latest Docker image
 echo "Pulling the latest Docker image..."
