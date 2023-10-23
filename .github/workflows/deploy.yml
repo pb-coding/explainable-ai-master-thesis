@@ -18,7 +18,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
@@ -43,5 +43,5 @@ jobs:
         script: |
           curl -O https://raw.githubusercontent.com/pb-coding/explainable-ai-master-thesis/main/.github/scripts/deploy.sh
           chmod +x deploy.sh
-          ./deploy.sh ${{ secrets.DOCKER_REGISTRY_TOKEN }}
+          ./deploy.sh ${{ secrets.GITHUB_TOKEN }}
           rm deploy.sh
